@@ -1,0 +1,15 @@
+{
+  "name": "Customer360 DQ",
+  "dataColors": ["#1F3864", "#2E75B6", "#9DC3E6", "#F9A825", "#C62828", "#2E7D32", "#7F7F7F", "#5B9BD5"],
+  "background": "#FFFFFF",
+  "foreground": "#1F2937",
+  "tableAccent": "#1F3864",
+  "good": "#2E7D32",
+  "neutral": "#F9A825",
+  "bad": "#C62828",
+  "textClasses": {
+    "title": {"fontFace": "Segoe UI Semibold", "fontSize": 14, "color": "#1F3864"},
+    "label": {"fontFace": "Segoe UI", "fontSize": 10, "color": "#4B5563"},
+    "callout": {"fontFace": "Segoe UI Semibold", "fontSize": 28, "color": "#1F3864"}
+  }
+}

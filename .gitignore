@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+data/raw/
+data/processed/
+data/customer360.db
+.DS_Store
+.vscode/
+.idea/
+powerbi/data/*.csv
+!powerbi/data/c360_flat.csv
+*.pbix

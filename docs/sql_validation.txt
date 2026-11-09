@@ -1,0 +1,160 @@
+--- row_counts ---
+         source  records
+loyalty_members     4085
+       bookings    33783
+ digital_events    53409
+
+--- loyalty_raw_completeness ---
+attribute  records  populated  populated_pct
+    email     4085       3850         0.9425
+    phone     4085       3479         0.8517
+      dob     4085       3703         0.9065
+  country     4085       3925         0.9608
+
+--- loyalty_same_email_duplicates ---
+ emails_with_duplicates  records_involved
+                     82               164
+
+--- orphan_loyalty_ids_on_bookings ---
+ bookings_quoting_an_id  orphan_ids  orphan_rate
+                  15253         227       0.0149
+
+--- shared_contact_candidates ---
+                 contact_email  bookings  distinct_surnames
+reservations@matkatoimisto.com       490                 53
+reservations@polarjourneys.com       483                 55
+  reservations@airdeals-eu.com       479                 54
+reservations@globetrotters.com       475                 54
+reservations@traveldesk-oy.com       469                 55
+   reservations@citybreaks.com       449                 54
+reservations@nordic-travel.com       446                 53
+  reservations@sunwings-fi.com       442                 51
+   reservations@lomamatkat.com       427                 52
+     reservations@eurotrip.com       424                 51
+
+--- bookings_without_any_contact ---
+      channel  bookings  no_email_no_phone    pct
+  call_center      1931                267 0.1383
+    corporate      3329                126 0.0378
+          app     10182                310 0.0304
+          web     12246                322 0.0263
+travel_agency      6095                143 0.0235
+
+--- booking_link_rate ---
+ bookings  linked_identified  pct_linked_identified  pct_linked_loyalty
+    33783              27926                 0.8266              0.6318
+
+--- booking_link_rate_by_channel ---
+      channel  bookings  pct_linked_identified  pct_linked_loyalty
+travel_agency      6095                 0.3614              0.2694
+    corporate      3329                 0.5692              0.4524
+  call_center      1931                 0.8933              0.6018
+          web     12246                 0.9852              0.6838
+          app     10182                 0.9859              0.8506
+
+--- booking_link_rate_by_month ---
+year_month  bookings  pct_linked_identified
+   2024-01       686                 0.8309
+   2024-02       939                 0.8264
+   2024-03      1053                 0.8224
+   2024-04       969                 0.8287
+   2024-05      1005                 0.8219
+   2024-06       932                 0.8283
+   2024-07      1045                 0.8220
+   2024-08       949                 0.8072
+   2024-09      1025                 0.8478
+   2024-10       980                 0.8194
+   2024-11       960                 0.8167
+   2024-12      1027                 0.8296
+   2025-01      1072                 0.8228
+   2025-02       917                 0.8332
+   2025-03      1028                 0.8375
+   2025-04       954                 0.8187
+   2025-05       979                 0.8121
+   2025-06       997                 0.7994
+   2025-07      1053                 0.8357
+   2025-08      1067                 0.8257
+   2025-09       984                 0.8313
+   2025-10      1014                 0.8225
+   2025-11       959                 0.8113
+   2025-12      1009                 0.8196
+   2026-01      1020                 0.8196
+   2026-02       940                 0.8415
+   2026-03      1028                 0.8395
+   2026-04      1035                 0.8435
+   2026-05       993                 0.8359
+   2026-06       960                 0.8427
+   2026-07      1008                 0.8125
+   2026-08      1070                 0.8336
+   2026-09       997                 0.8445
+   2026-10      1008                 0.8155
+   2026-11       121                 0.8678
+
+--- avg_profile_completeness ---
+ identified_customers  avg_completeness  pct_ge_90
+                 7708            0.7722     0.4261
+
+--- completeness_bands ---
+completeness_band  customers    pct
+         Complete       3284 0.4261
+             Good        529 0.0686
+          Partial       3827 0.4965
+             Poor         68 0.0088
+
+--- freshness_buckets ---
+freshness_status  customers    pct
+   Fresh (<=90d)       3922 0.5088
+Ageing (91-365d)       1906 0.2473
+   Stale (>365d)       1880 0.2439
+
+--- refreshed_last_12m ---
+ pct_refreshed_12m
+            0.7561
+
+--- loyalty_duplicate_rate ---
+ loyalty_records  duplicate_records  duplicate_rate
+            4085                259          0.0634
+
+--- orphan_loyalty_id_rate ---
+ bookings_with_id  orphan_ids  orphan_rate
+            15253         227       0.0149
+
+--- active_customers_and_value ---
+value_tier  customers  active_customers  revenue_24m_eur
+      High       1844              1756        2764423.0
+    Medium       3140              2393        1884927.0
+       Low       1776               965         327628.0
+  No spend        948                 0              0.0
+
+--- value_deciles ---
+ decile  customers  revenue_eur  share_of_revenue
+      1        676    1329000.0            0.2670
+      2        676     900815.0            0.1810
+      3        676     713287.0            0.1433
+      4        676     569776.0            0.1145
+      5        676     447453.0            0.0899
+      6        676     346135.0            0.0695
+      7        676     263066.0            0.0529
+      8        676     194534.0            0.0391
+      9        676     135342.0            0.0272
+     10        676      77571.0            0.0156
+
+--- top_missing_attribute_combos ---
+                        missing_attributes  customers
+                              dob, country       2493
+                       phone, dob, country       1101
+                                       dob        375
+                       email, dob, country        231
+                                   country        130
+first_name, last_name, phone, dob, country         68
+                                     phone         22
+                                phone, dob          2
+
+=== RECONCILIATION: SQL vs Pandas ===
+PASS  Bookings linked to identified customer %         sql=0.8266 pandas=0.8266
+PASS  Bookings linked to loyalty member %              sql=0.6318 pandas=0.6318
+PASS  Avg profile completeness % (identified)          sql=0.7722 pandas=0.7722
+PASS  Profiles >=90% complete %                        sql=0.4261 pandas=0.4261
+PASS  Loyalty duplicate rate % (exact-key)             sql=0.0634 pandas=0.0634
+PASS  Orphan loyalty IDs on bookings %                 sql=0.0149 pandas=0.0149
+PASS  Identified profiles refreshed in last 12m %      sql=0.7561 pandas=0.7561

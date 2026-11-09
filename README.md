@@ -49,6 +49,7 @@ Web and app bookings link to a customer about 98.5% of the time. Corporate booki
 These bookings carry about EUR 1.48M of fares (17.5% of the total) that cannot be tied to any customer. The link rate stays between roughly 80% and 87% every month, so it does not fix itself.
 
 ![Linkage](docs/screenshots/02_linkage.png)
+https://app.powerbi.com/groups/me/reports/cfcd1271-e134-4be5-9be4-38f6a92295f9/d4799407d83c0501c367?experience=power-bi
 
 Values on this page: 34K bookings, 6K unlinked. Link rate by channel: travel agency 36.1%, corporate 56.9%, call center 89.3%, web 98.5%, app 98.6%. Most unlinked bookings (about 5K) are shared agency or travel desk contacts, then no contact data, invalid contact data and orphan loyalty IDs.
 
@@ -57,6 +58,7 @@ Values on this page: 34K bookings, 6K unlinked. Link rate by channel: travel age
 Members average 97.6% completeness, non-members 57.1%. Bookings have no birth date or country, so only about 45% of customers have a birth date and 48% have a country. Members are also more active: 85.6% booked in the last year, against 47.4% of non-members.
 
 ![Completeness](docs/screenshots/03_completeness.png)
+https://app.powerbi.com/groups/me/reports/cfcd1271-e134-4be5-9be4-38f6a92295f9/866a0ef38b56517ec2ee?experience=power-bi
 
 Values on this page: average profile completeness 81.8%. Completeness bands: Partial 3,827, Complete 3,284, Good 529, Poor 68. Valid share by source: loyalty is valid for every attribute, bookings have no birth date or country, and the combined customer profile shows 0% valid birth date and country.
 
@@ -67,6 +69,7 @@ Values on this page: average profile completeness 81.8%. Completeness bands: Par
 6.3% of loyalty records are duplicates found by exact matching, above my target. The review list adds only 0.4%. One in four identified customers is stale (no booking, login or update for over a year): 1,880 of 7,708.
 
 ![Freshness and duplicates](docs/screenshots/04_freshness.png)
+https://app.powerbi.com/groups/me/reports/cfcd1271-e134-4be5-9be4-38f6a92295f9/486ee789dbab8d094dc1?experience=power-bi
 
 Values on this page: duplicate rate 6.3%, refreshed in last 12 months 75.6%. Customers by freshness: Fresh (up to 90 days) 3.9K, Ageing (91 to 365 days) 1.9K, Stale (over 365 days) 1.9K.
 
@@ -77,14 +80,9 @@ Values on this page: duplicate rate 6.3%, refreshed in last 12 months 75.6%. Cus
 1,844 high-value customers (about 24% of identified customers) generate 55.5% of the EUR 4.98M spent over the last 24 months. Active customers are 66% of the identified base.
 
 ![Customer value](docs/screenshots/05_customer_value.png)
+https://app.powerbi.com/groups/me/reports/cfcd1271-e134-4be5-9be4-38f6a92295f9/549ee992383708e60295?experience=power-bi
 
 Values on this page: 5,114 active customers (66%), customer value over 24 months EUR 4.98M. By value tier: High 2.76M, Medium 1.88M, Low 0.33M, No spend 0.00M.
-
-### Overview against targets
-
-This chart is drawn directly from the pipeline output, not from Power BI.
-
-![Overview](docs/screenshots/overview_from_pipeline.png)
 
 ### What I would do about it
 
@@ -114,10 +112,10 @@ git clone https://github.com/YOUR-USERNAME/customer360-data-quality.git
 cd customer360-data-quality
 
 python3 -m venv .venv
-source .venv/bin/activate          # Windows: .venv\Scripts\activate
+source .venv/bin/activate          
 pip install -r requirements.txt
 
-bash run_all.sh                    # takes about a minute
+bash run_all.sh                    
 ```
 
 On Windows, if `run_all.sh` does not work, run the scripts one by one:
@@ -151,4 +149,3 @@ powerbi/   data tables, DAX measures, theme
 docs/      glossary workbook, build guide, test results, screenshots
 ```
 
-How I used AI tools is described in `docs/AI_USAGE.md`.

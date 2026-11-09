@@ -1,4 +1,4 @@
-# Customer 360 Data Quality Project
+# Customer 360 - Data Quality & Identity Resolution 
 
 ## What is this project?
 

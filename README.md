@@ -36,6 +36,7 @@ The targets are my own guesses, not real business targets.
 ### Scorecard
 
 ![Scorecard](docs/screenshots/01_scorecard.png)
+https://app.powerbi.com/groups/me/reports/cfcd1271-e134-4be5-9be4-38f6a92295f9/390aebb9154e62a1be9a?experience=power-bi
 
 Values on this page: booking link rate 82.7%, average profile completeness 81.8%, refreshed in last 12 months 75.6%, duplicate rate 6.3%, orphan loyalty ID rate 1.5%. The monthly link rate stays between 79.9% (mid 2025) and 86.8% (latest month).
 
